@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>我的世界</title>
+        <link rel="stylesheet" href="css/myworld.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/myworld.js"></script>
+    </head>
+
+    <body>
+        <div id="mainContainer" class="mainContainer">
+            <div class="vague"></div>
+            <div class="container">
+                <div class="sidebar">
+                    <a class="backhome" href="index.html">返回主页</a>
+                    <div class="face">
+                        <img src="img/myworld/grzx7.png">
+                        <div class="widgets">
+                            <a><span>2</span></a>
+                            <a><span>1</span></a>
+                            <a></a>
+                        </div>
+                    </div>
+                    <h3 class="title">星球花园</h3>
+                    <h5 class="level">Lv.7</h5>
+                    <div class="menu">
+                        <ul>
+                            <li class="active"><a data-target="#taskbox" >积分任务</a></li>
+                            <li><a data-target="#collectbox">我的收藏</a></li>
+                            <li><a data-target="#groupbox">我 的 团</a></li>
+                            <li><a>我的钱包</a></li>
+                            <li><a data-target="#tracebox">我的足迹</a></li>
+                            <li><a data-target="#accountbox">账号设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="taskbox" id="taskbox">
+                        <h3>积 分 任 务</h3>
+                        <dl>
+                            <dt>
+                                <div>
+                                    <h2>新手大礼包</h2>
+                                    <p>首次注册登录奖励100积分</p>
+                                </div>
+                            </dt>
+                            <dd><img src="img/myworld/x11.png"></dd>
+                            <dt>
+                                <div>
+                                    <h2>首登有礼</h2>
+                                    <p>每天首次登录奖励10积分</p>
+                                </div>
+                            </dt>
+                            <dd><img src="img/myworld/x11.png"></dd>
+                            <dt>
+                                <div>
+                                    <h2>分享奖励</h2>
+                                    <p>每次分享奖励10积分，每天最高奖励100积分</p>
+                                </div>
+                            </dt>
+                            <dd><span>1/10</span><br><a>未完成</a></dd>
+                            <dt>
+                                <div>
+                                    <h2>评论奖励</h2>
+                                    <p>每次评论奖励5积分，每天最高奖励100积分</p>
+                                </div>
+                            </dt>
+                            <dd><span>1/10</span><br><a>未完成</a></dd>
+                            <dt>
+                                <div>
+                                    <h2>邀请好友奖励</h2>
+                                    <p>成功邀请好友奖励50积分</p>
+                                </div>
+                            </dt>
+                            <dd><span>1/10</span><br><a>未完成</a></dd>
+                        </dl>
+                        <div class="details">
+                            <h2>我的积分：</h2>
+                            <div class="total">
+                                <span>698<b>+50</b></span>
+                                <a>购买积分</a>
+                            </div>
+                            <h2>积分消耗详情：</h2>
+                            <div class="consume">
+                                <ul>
+                                    <li>新手大礼包<span>+100</span></li>
+                                    <li>浏览颐和园仁寿殿<span>-50</span></li>
+                                    <li>发表评论<span>+5</span></li>
+                                    <li>浏览北海公园历史<span>-20</span></li>
+                                    <li>成功邀请好友<span>+50</span></li>
+                                </ul>
+                            </div>
+                            <img src="img/myworld/X15.png" class="acer">
+                        </div>
+                    </div>
+
+                    <div class="collectbox hide" id="collectbox">
+                        <h3>我 的 收 藏</h3>
+                        <div class="category">
+                            <a class="active">景点</a>
+                            <a>规划</a>
+                            <a>攻略</a>
+                            <a>团游</a>
+                        </div>
+                        <div class="tools">
+                            <div class="group">
+                                <a class="active">最近收藏</a>
+                                <a>编辑推荐</a>
+                                <a>人气最高</a>
+                            </div>
+                            <div class="group hide">
+                                <a class="active">最近收藏</a>
+                                <ul>
+                                    <li>
+                                        <a>地理位置 <i class="fa fa-angle-down"></i></a>
+                                        <ul class="hide">
+                                            <li><a>地理位置</a></li>
+                                            <li><a>北京</a></li>
+                                            <li><a>上海</a></li>
+                                            <li><a>郑州</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a>游玩天数 <i class="fa fa-angle-down"></i></a>
+                                        <ul class="hide">
+                                            <li><a>游玩天数</a></li>
+                                            <li><a>1天</a></li>
+                                            <li><a>1周</a></li>
+                                            <li><a>1个月</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="group hide">
+                                <a class="active">吃</a>
+                                <a>住</a>
+                                <a>玩</a>
+                            </div>
+                            <div class="group hide">
+                                <a class="active">最近收藏</a>
+                                <a>已结束</a>
+                                <a>人气最高</a>
+                            </div>
+
+                        </div>
+                        <ul class="list">
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="paging">
+                            <a>|&lt;</a>
+                            <a>&lt;</a>
+                            <a class="active">1</a>
+                            <a>2</a>
+                            <a>3</a>
+                            <a>4</a>
+                            <a>5</a>
+                            ......
+                            <a>&gt;</a>
+                            <a>&gt;|</a>
+                        </div>
+                    </div>
+                    
+                    <div class="groupbox hide" id="groupbox">
+                        <h3>我 的 团</h3>
+                        <div class="category">
+                            <a class="active">基本信息</a>
+                            <a>账号安全</a>
+                         
+                        </div>
+                        
+                        <div class="tools">
+                            <div class="group1">
+                                <a class="active">全部</a>
+                                <a>进行中</a>
+                                <a>已结束</a>
+                            </div>
+                            <div class="group1 hide">
+                                <a class="active">最近收藏</a>
+                                <ul>
+                                    <li>
+                                        <a>地理位置 <i class="fa fa-angle-down"></i></a>
+                                        <ul class="hide">
+                                            <li><a>地理位置</a></li>
+                                            <li><a>北京</a></li>
+                                            <li><a>上海</a></li>
+                                            <li><a>郑州</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a>游玩天数 <i class="fa fa-angle-down"></i></a>
+                                        <ul class="hide">
+                                            <li><a>游玩天数</a></li>
+                                            <li><a>1天</a></li>
+                                            <li><a>1周</a></li>
+                                            <li><a>1个月</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+
+                        </div>
+                        <ul class="list">
+                            <li>
+                                <div class="gimg"><img src="img/myworld/gimg1.jpg"></div>
+                                
+                                <div class="gtext">
+                                	<h3>畅游北京，体验皇家尊贵生活</h3>
+                                    <p>2015-12-20——2015-12-24    共5天<br>
+										团长：哈哈哈          团费：2000/人<br>
+										行程景点：北海公园; 颐和园; 中山陵; 长城; 颐和园</p>
+                             
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                   <p class="y">共32名团友，其中30人已评价</p>
+                                   <p><a href="#">查看详情>></a></p>
+                                </div>
+                                <div class="pro"><img src="img/myworld/end.png"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="gimg"><img src="img/myworld/gimg1.jpg"></div>
+                                
+                                <div class="gtext">
+                                	<h3>畅游北京，体验皇家尊贵生活</h3>
+                                    <p>2015-12-20——2015-12-24    共5天<br>
+										团长：哈哈哈          团费：2000/人<br>
+										行程景点：北海公园; 颐和园; 中山陵; 长城; 颐和园</p>
+                        
+                                   <p class="y">共28人报名，今日新增5人</p>
+                                   <div class="t">
+                                   	  <ol class="#box">
+                                   		<li><img src="img/myworld/p1.png"><br>朵朵</li>
+                                        <li><img src="img/myworld/p2.png"><br>少少</li>
+                                        <li><img src="img/myworld/p1.png"><br>朵朵</li>
+                                        <li><img src="img/myworld/p2.png"><br>少少</li>
+                                        <li><img src="img/myworld/p1.png"><br>朵朵</li>
+                                        <li><img src="img/myworld/p2.png"><br>少少</li>
+                                        <li><img src="img/myworld/p1.png"><br>朵朵</li>
+                        
+                                   	</ol>
+                                   </div>
+                                
+                                   
+                                </div>
+                                <div class="pro"><img src="img/myworld/going.png"></div>
+                                <div class="clear"></div>
+                            </li>
+                          
+                        </ul>
+                        <div class="paging">
+                            <a>|&lt;</a>
+                            <a>&lt;</a>
+                            <a class="active">1</a>
+                            <a>2</a>
+                            <a>3</a>
+                            <a>4</a>
+                            <a>5</a>
+                            ......
+                            <a>&gt;</a>
+                            <a>&gt;|</a>
+                        </div>
+                    </div>
+                    
+                    <div class="collectbox hide" id="tracebox">
+                        <h3>我 的 足 迹</h3>
+                        <div class="date">
+                        	<h1>今日/2016/01/01</h1>
+                            <span></span>
+                        </div>
+                        
+                        <ul class="list">
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                               
+                                <div class="shade">
+                                    <h2>颐和园</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="img/myworld/grzx7.png">
+                                <h3>北京烤鸭总店<span>288人去过</span></h3>
+                                <div class="shade">
+                                    <h2>北京烤鸭总店</h2>
+                                    <span><b></b><b></b><b></b><b></b><b></b></span>
+                                    <p>1739人去过</p>
+                                    <h4>79元/人</h4>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="date">
+                        	<h1>今日/2016/01/01</h1>
+                            <span></span>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="accountbox hide" id="accountbox">
+                        <h3>帐 号 设 置</h3>
+                        <div class="category">
+                            <a class="active">基本信息</a>
+                            <a>账号安全</a>
+                          
+                        </div>
+                        <div class="tools">
+                            
+                            <div class="group">
+                                <div class="proline">
+                                	资料完善度：66%
+                                <img src="img/myworld/proline.png"></div>
+                                <dl>
+                    <dt>昵称</dt>
+                   
+                        <dd><input type="text" value="星球花园"></dd>
+                        
+                        <dt>性别</dt>
+                   
+                        <dd>
+                        
+                            <label class="sex">
+                              <input type="radio" name="RadioGroup1" value="男" id="RadioGroup1_0">
+                              男</label>
+                           
+                            <label class="sex">
+                              <input type="radio" name="RadioGroup1" value="女" id="RadioGroup1_1">
+                              女</label>
+                         
+                            <label class="sex">
+                              <input type="radio" name="RadioGroup1" value="保密" id="RadioGroup1_2">
+                              保密</label>
+                       
+                       
+                        </dd>
+                    <dt>居住城市</dt>
+                    <dd>
+                        <select>
+                            <option>郑州</option>
+                            <option>东莞</option>
+                        </select>
+                        <select>
+                            <option>郑州</option>
+                            <option>东莞</option>
+                        </select>
+                    </dd>
+                    <dt>出生日期</dt>
+                    <dd><input type="text" value="1992-02-06"></dd>
+                    <dt>个性签名</dt>
+                    <dd>
+                    <textarea></textarea>
+                    </dd>
+                     <dt></dt>
+                    <dd>
+                <input name="保存" type="button" value="保存" class="num-save">
+                    </dd>
+                    <div class="clear"></div>
+                    <div class="tou"><img src="img/myworld/p3.jpg"><br><a href="#">修改头像</a><br>支持JPG、PNG,图片大小5M以内</div>
+                  
+                   
+                </dl>
+                               
+                            </div>
+                            
+
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="roamCanvas"></div>
+        </div>
+    </body>
+</html>

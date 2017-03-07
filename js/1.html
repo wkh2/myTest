@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*.highlight{
+			color:darkblue;
+			width:50px;
+			height:50px;
+			}*/
+			.div1{
+				background:firebrick;
+				width:200px;
+				height:200px;
+				margin-left:50px;
+			}
+			p{
+				background:darksalmon;
+			}
+			.multi_column_style{
+			 -webkit-column-count:4;
+			 -webkit-column-rule:5px solid #ccc;
+			 -webkit-column-gap:2em;
+			 margin-top:20px;
+			 word-wrap: break-word;
+			 border:1px solid #000;
+			 padding:5px;
+			 font-family: arial;
+			}
+			.jianbian{
+				width:100px;
+				height:100px;
+				background:-webkit-gradient(radial,50 50,50,50 1,0,from(red),to(white));
+			}
+			/*.item{
+				height:30px;
+				background:darkcyan;
+				color:#fff;
+				font-size:15px;
+				font-family: "微软雅黑";
+				padding-left:10px;
+				border-bottom:3px solid #fff;
+			}*/
+			.boxcontainer{
+				width:1000px;
+				display: -webkit-box;
+				display: -moz-box;
+                 -webkit-box-orient: horizontal;
+                 -moz-box-orient: horizontal;
+			}
+			.item{
+				background:#CFA972;
+				font-weight: bold;
+				margin:2px;
+				padding:20px;
+				color:#FFFFFF;
+				font-family: arial;
+			}
+			.transStart { 
+    background-color:white; 
+    -webkit-transition: background-color 0.3s linear; 
+    -moz-transition: background-color 0.3s linear; 
+    /*-o-transition: background-color 0.3s linear; */
+    transition: background-color 0.3s linear; 
+ } 
+ .transEnd { 
+    background-color:red; 
+ }
+		</style>
+		<script type="text/javascript" src="../src/jquery-1.11.3.min.js">	
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				/*var count=0;
+			   $("strong").click(function(){
+			   	$(this).toggleClass("highlight", count++ % 2 ==0);
+			   });*/
+			 /*  $("div").click(function(){
+			   	if($(this).hasClass("div1"))
+			   	$(this)
+			   	.animate({left:10000})
+			   	.animate({left:-10000})
+			   	.animate({left:10000})
+			   	.animate({left:-10000})
+			   	.animate({left:0});
+			   });
+			   $("p").blur(function(){
+			   	console.log("hello world!");
+			   });*/
+			  $("#results").append( "<tt>" + $("form")
+			  .serialize() + "</tt>" );
+			})
+		</script>
+	</head>
+	<body>
+		<p id="results"><b>Results: </b> </p>
+<form>
+  <select name="single">
+    <option>Single</option>
+    <option>Single2</option>
+  </select>
+  <select name="multiple" multiple="multiple">
+    <option selected="selected">Multiple</option>
+    <option>Multiple2</option>
+    <option selected="selected">Multiple3</option>
+  </select><br/>
+  <input type="checkbox" name="check" value="check1"/> check1
+  <input type="checkbox" name="check" value="check2" checked="checked"/> check2
+  <input type="radio" name="radio" value="radio1" checked="checked"/> radio1
+  <input type="radio" name="radio" value="radio2"/> radio2
+</form>
+	</body>
+	<div style="height: 1px;overflow: hidden;background:red"></div>
+	<!--css3的多列布局-->
+	<div class="multi_column_style">
+		bcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderen
+		bcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderen
+		bcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderen
+		bcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderen
+		bcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderen
+		bcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderen
+		
+		bcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderenbcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderenbcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderenbcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodefvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderenbcdhbvdhfvbsdhvjsdndhbvdhfvbhdfvbjdsjdsnsdjnishiwpdeuansjinfwomensxianshizhduhfdhfuhfsehfjniyidingyaohaodejidewocenjinshijiaiguoderen
+	</div>
+	<!--css3的径向渐变的实例微射光-->
+    <div class="jianbian"></div>
+    <div class="boxcontainer">
+    	<div class="item">
+    		1
+    	</div>
+    	<div class="item">2</div>
+    	<div class="item">3</div>
+    	<div class="item flex">4</div>
+    </div>
+    <div id="transDiv" class="transStart"> transition </div> 
+ </html>

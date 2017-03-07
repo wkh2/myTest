@@ -1,0 +1,917 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>虚拟世界</title>
+        <link rel="stylesheet" href="js/scrollbar/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="css/public.css">
+        <link rel="stylesheet" href="css/citymap.css">
+        <script src="js/jquery.min.js"></script>
+         <link rel="stylesheet" href="src/ezmodal.css">
+
+    </head>
+
+    <body>
+        <div class="mainContainer" id="mainContainer">
+            <div class="container" id="cityMap">
+                <div id="scene3D"></div>
+                <div id="cityMapModal" class="hide">
+                   <div id="raidersBox" class="raidersBox">
+                <div class="category-btns">
+                    <a class="chi">吃</a>
+                    <a class="zhu active">住</a>
+                    <a class="wan">玩</a>
+                </div>
+            	
+                <ul class="head-tools">
+                    <li>
+                        <a>3km内 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>3km内</a>
+                            <a>本区内</a>
+                            <a>本市内</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a>糕点 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>糕点</a>
+                            <a>银行</a>
+                            <a>饭店</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a>默认排序 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>默认排序</a>
+                            <a>按距离</a>
+                            <a>按相关性</a>
+                        </div>
+                    </li>
+                    <p class="clear"></p>
+                </ul>
+                <ul class="resultList">
+                    <li>
+                        <img src="img/yiheyuan.jpg">
+                        <div class="">
+                            <h3>全聚德烤鸭</h3>
+                            <p><b class="star"></b><b class="star"></b><b class="star"></b><b></b><b></b></p>
+                            <span>人均:79元</span>
+                            <p>北京市昌平区和平大道289号</p>
+                            <img src="img/gl5.png" class="rec-icon">
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/yiheyuan.jpg">
+                        <div class="">
+                            <h3>全聚德烤鸭</h3>
+                            <p><b class="star"></b><b class="star"></b><b class="star"></b><b></b><b></b></p>
+                            <span>人均:79元</span>
+                            <p>北京市昌平区和平大道289号</p>
+                            <img src="img/gl5.png" class="rec-icon">
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/yiheyuan.jpg">
+                        <div class="">
+                            <h3>全聚德烤鸭</h3>
+                            <p><b class="star"></b><b class="star"></b><b class="star"></b><b></b><b></b></p>
+                            <span>人均:79元</span>
+                            <p>北京市昌平区和平大道289号</p>
+                            <img src="img/gl5.png" class="rec-icon">
+                        </div>
+                    </li>
+                </ul>
+                
+                <a class="more"></a>
+				
+		
+            </div>
+                </div>
+                <div id="detailModal" class="hide">
+              
+                </div>
+                <div class="navbar">
+                    <div class="searchbox">
+                        <div class="item-container">
+                            <select>
+                                <option>景区</option>
+                                <option>景区2</option>
+                                <option>景区3</option>
+                            </select>
+                            <input type="text" value="故宫">
+                            <a class="search" id="serch"></a>
+                        </div>
+                    </div>
+                    <div class="navgroup">
+                        <a class="hotspot"></a>
+                        <a class="plan"></a>
+                        <a class="raiders"></a>
+                        <a class="zone"></a>
+                        <a class="backworld"></a>
+                    </div>
+                    <div class="shade hide"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 热点 -->
+        <script type="text/template" id="hotBoxTemplate">
+            <div id="hotBox" class="hotBox">
+                <h2>热 点</h2>
+                <div class="head-tools">
+                    <a class="lately active">最近收藏</a>
+                    <a class="recommend">编辑推荐</a>
+                    <a class="popularity">人气最高</a>
+                </div>
+                <ul class="hotList">
+                    <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+					  <li class="item">
+                        <img src="img/yiheyuan.jpg">
+                        <div class="item-title">
+                            <h2>颐和园</h2>
+                            <h4>——— . 北京 . ———</h4>
+                            <span>2016-02-28</span>
+                            <a>进入3D场景</a>
+                        </div>
+                        <div class="item-tools"><a class="like">124</a><a class="msg">92</a><a class="collect">293</a></div>
+                    </li>
+                </ul>
+                <div class="pageBox">
+                    <a>|&lt;</a>
+                    <a>&lt;</a>
+                    <a class="active">1</a>
+                    <a>2</a>
+                    <a>3</a>
+                    ......
+                    <a>&gt;</a>
+                    <a>&gt;|</a>
+                </div>
+            </div>
+        </script>
+        <!-- 我的计划 -->
+        <script type="text/template" id="planBoxTemplate">
+            <div id="planBox" class="planBox">
+                <dl>
+                    <dt>您在哪</dt>
+                    <dd>
+                        <select>
+                            <option>河南省;郑州市</option>
+                            <option>北京;北京市</option>
+                        </select>
+                    </dd>
+                    <dt>您想去哪儿玩</dt>
+                    <dd>
+                        <select>
+                            <option>郑州</option>
+                            <option>东莞</option>
+                        </select>
+                    </dd>
+                    <dt>您去玩几天</dt>
+                    <dd><input type="text"><b>天</b></dd>
+                    <dt>您感兴趣的是</dt>
+                    <dd>
+                        <select>
+                            <option>河南省;郑州市</option>
+                            <option>北京;北京市</option>
+                        </select>
+                    </dd>
+                    <dt></dt>
+                    <dd><a class="btn-plan"></a></dd>
+                </dl>
+                <p class="clear"></p>
+                <div class="myplanBox">
+                    <div class="btn-group">
+                        <a class="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="next"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <div class="planList">
+                        <div class="planHead">
+                            <span class="title">行程一</span>
+                            <a class="collect"></a>
+                            <a class="share"></a>
+                            <a class="print" ezmodal-target="#example1"></a>
+							
+                        </div>
+                        <ul class="box">
+                            <li>
+                                <a class="title">第一天 <i class="fa fa-angle-up"></i></a>
+                                <div>
+                                    <a>北海公园</a>
+                                    <a>中山公园</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="title">第二天 <i class="fa fa-angle-up"></i></a>
+                                <div>
+                                    <a>中山公园</a>
+                                    <a>故宫</a>
+                                    <a>景山公园</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <!-- 规划详情 -->
+        <script type="text/template" id="myplanDetailTemplate">
+            <h3 class="modal-title">景点</h3>
+            <a class="close"></a>
+            <div class="image">
+                <img src="img/gugong.jpeg">
+                <a class="go3dScene">进入3D场景</a>
+            </div>
+            <div class="modal-body">
+                <div class="head-tools">
+                    <h2>中山公园</h2>
+                    <div class="group-1">
+                        <a class="mob"></a><a class="share"></a><a class="net"></a>
+                    </div>
+                    <div class="group-2">
+                        <div class="item">
+                            <a class="star"></a>
+                            <span>收藏</span>
+                            <b>1238</b>
+                        </div>
+                        <div class="item">
+                            <a class="msg"></a>
+                            <span>点评</span>
+                            <b>843</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <p class="description">
+                        中山公园位于北京市中心紫禁城（故宫）南面，天安门西侧，与故宫一墙之隔。占地23万平方米，是—座纪念性的古典坛庙园林。它原是明清两代的社稷坛，与太庙
+                    </p>
+                    <dl>
+                        <dt>电话</dt>
+                        <dd>010-85000000</dd>
+                        <dt>地址</dt>
+                        <dd>北京东城区景山前街4号</dd>
+                        <dt>交通</dt>
+                        <dd>故宫位于北京城的中心，交通非常方便乘1、5、10、22、52、90、99、205、728、专1、专2路在天安门西站下，向东步行2分钟，或乘地铁1号线天安门西站B口出，向东步行1分钟。</dd>
+                        <dt>门票</dt>
+                        <dd>淡季40元/人<br>忘记60元/人</dd>
+                        <dt>开放时间</dt>
+                        <dd>乘5路在西华门站下，路东侧向南步行5分钟。自驾车游客可行驶至南长街的公园西门，门前有收费停车场，限18:00之前，有约30个车位</dd>
+                        <dt>用时参考</dt>
+                        <dd>故宫游客非常多。至少需要半天时间参观，若时间充足，建议一天为佳</dd>
+                        <p class="clear"></p>
+                    </dl>
+                    <div class="commentBox">
+                        <div class="comment-head">
+                            <span>共<a>386</a>条点评</span>
+                            <a class="go-comment">我要点评</a>
+                        </div>
+                        <dl class="comment-list">
+                            <dt><img src="img/gugong.jpeg"></dt>
+                            <dd>
+                                <h3><span>Moon</span><a><i class="fa fa-thumbs-o-up"></i> 438</a></h3>
+                                <p class="text">一些腐（和谐）败，一些超出人类所能承受的东西，比如食品问题，道德问题，社会问题，环境问题！种种各样的极端矛盾！
+                                    这些问题已经成为外界的笑柄，有很多人把中国成为“天朝”是一种讽刺！一种娱乐了，可见这些问题达到了某种程度了。。。唉。。。活在天朝身不由己</p>
+                                <div class="img-box">
+                                    <img src="img/gugong.jpeg">
+                                    <img src="img/gugong.jpeg">
+                                    <img src="img/gugong.jpeg">
+                                    <img src="img/gugong.jpeg">
+                                </div>
+                                <div class="huifu">
+                                    <span>2016-01-20 16:30</span>
+                                    <a>回复</a>
+                                </div>
+                                <ul class="hf-list">
+                                    <li><img src="img/gugong.jpeg"><a>我是个很厉害的水母</a>回复<a>去死吧</a>:请问经常看到有人买到故宫的一些小玩意，从哪买的呀？<a class="gohf">回复</a><br>2016-02-20 19:56:34</li>
+                                </ul>
+                                <p class="more">还有四条回复，<a>点击查看</a></p>
+                            </dd>
+                            <p class="clear"></p>
+                        </dl>
+                        <div class="pageBox">
+                            <a>|&lt;</a>
+                            <a>&lt;</a>
+                            <a class="active">1</a>
+                            <a>2</a>
+                            <a>3</a>
+                            ......
+                            <a>&gt;</a>
+                            <a>&gt;|</a>
+                        </div>
+                        <div class="comment-form">
+                            <form>
+                                <h2>故宫</h2>
+                                <textarea></textarea>
+                                <b>20-1000个字</b>
+                                <div class="fileField">
+                                    <input type="file" class="hide">
+                                    <a></a>
+                                </div>
+                                <input type="button" value="发表点评">
+                                <p class="clear"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+        
+        
+        
+        <!-- 打印 -->
+        <script type="text/template" id="printDetailTemplate">
+            <div id="print-con">
+			<h3 class="modal-title">打印</h3>
+            <a class="close"></a>
+            
+            <div class="modal-body">
+          			<h1>北京之旅行程规划</h1>
+					<p class="print-line">3天/8个景点    2016-01-20</p>
+					<h2>第一天</h2>
+                    <h3>北海公园</h3>
+					<p class="xing"><span></span><span></span><span></span></p>
+					<div class="clear"></div>
+                        中山公园位于北京市中心紫禁城（故宫）南面，天安门西侧，与故宫一墙之隔。占地23万平方米，是—座纪念性的古典坛庙园林。它原是明清两代的社稷坛，与太庙
+                    </p>
+				
+				
+					
+					<h2>第一天</h2>
+                    <h3>北海公园</h3>
+					<p class="xing"><span></span><span></span><span></span></p><div class="clear"></div>
+                        中山公园位于北京市中心紫禁城（故宫）南面，天安门西侧，与故宫一墙之隔。占地23万平方米，是—座纪念性的古典坛庙园林。它原是明清两代的社稷坛，与太庙
+                    </p>
+                   
+           
+            </div>
+			<div class="tieshi">
+				<p>旅行小贴士</p>
+				<p>1.北京雾霾严重，出行请亲务必带好防雾霾口罩哦！</p>
+				<p>2.冬季去北方感受雪国魅力，防寒是必须，羽绒服、保暖内衣是必备品。</p>
+				<p>3.北京大部分地方都有暖气，适时增减衣物也是很必要的哦！</p>
+			</div>
+			<a class="dayin"></a>
+			</div>
+			
+        </script>
+        
+        <!-- 攻略详情 -->
+        <script id="raidersDetailTemplate" type="text/template">
+            <h3 class="modal-title">美食</h3>
+            <a class="close"></a>
+            <div class="image">
+                <img src="img/gugong.jpeg">
+            </div>
+            <div class="modal-body raidersModalBody">
+                <div class="head-tools">
+                    <h2>全聚德烤鸭总店<p><b class="star"></b><b class="star"></b><b class="star"></b><b></b><b></b></p></h2>
+                    <div class="group-1">
+                        <a class="mob"></a><a class="share"></a>
+                    </div>
+                    <div class="group-2">
+                        <div class="item">
+                            <a class="star"></a>
+                            <span>收藏</span>
+                            <b>1238</b>
+                        </div>
+                        <div class="item">
+                            <a class="msg"></a>
+                            <span>点评</span>
+                            <b>843</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <p class="description">
+                        全聚德，中华老字号，创建于1864年（清同治3年），历经几代的创业拼搏，获得了长足发展，全聚德，中华老字号，创建于1864年（清同治3年），历经几代的创业拼搏，获得了长足发展
+                        ，全聚德，中华老字号，创建于1864年（清同治3年），历经几代的创业拼搏，获得了长足发展
+                    </p>
+                    <dl>
+                        <dt>电话</dt>
+                        <dd>010-85000000</dd>
+                        <dt>地址</dt>
+                        <dd>北京东城区景山前街4号</dd>
+                        <dt>交通</dt>
+                        <dd>故宫位于北京城的中心，交通非常方便乘1、5、10、22、52、90、99、205、728、专1、专2路在天安门西站下，向东步行2分钟，或乘地铁1号线天安门西站B口出，向东步行1分钟。</dd>
+                        <dt>推荐菜品</dt>
+                        <dd>烤鸭，盐水鸭，火燎鸭心</dd>
+                        <dt>营业时间</dt>
+                        <dd>9:00-21:00</dd>
+                        <p class="clear"></p>
+                    </dl>
+                    <div class="commentBox">
+                        <div class="comment-head">
+                            <span>共<a>386</a>条点评</span>
+                            <a class="go-comment">我要点评</a>
+                        </div>
+                        <dl class="comment-list">
+                            <dt><img src="img/gugong.jpeg"></dt>
+                            <dd>
+                                <h3><span>Moon</span><a><i class="fa fa-thumbs-o-up"></i> 438</a></h3>
+                                <p class="text">一些腐（和谐）败，一些超出人类所能承受的东西，比如食品问题，道德问题，社会问题，环境问题！种种各样的极端矛盾！
+                                    这些问题已经成为外界的笑柄，有很多人把中国成为“天朝”是一种讽刺！一种娱乐了，可见这些问题达到了某种程度了。。。唉。。。活在天朝身不由己</p>
+                                <div class="img-box">
+                                    <img src="img/gugong.jpeg">
+                                    <img src="img/gugong.jpeg">
+                                    <img src="img/gugong.jpeg">
+                                    <img src="img/gugong.jpeg">
+                                </div>
+                                <div class="huifu">
+                                    <span>2016-01-20 16:30</span>
+                                    <a>回复</a>
+                                </div>
+                                <ul class="hf-list">
+                                    <li><img src="img/gugong.jpeg"><a>我是个很厉害的水母</a>回复<a>去死吧</a>:请问经常看到有人买到故宫的一些小玩意，从哪买的呀？<a class="gohf">回复</a><br>2016-02-20 19:56:34</li>
+                                </ul>
+                                <p class="more">还有四条回复，<a>点击查看</a></p>
+                            </dd>
+                            <p class="clear"></p>
+                        </dl>
+                        <div class="pageBox">
+                            <a>|&lt;</a>
+                            <a>&lt;</a>
+                            <a class="active">1</a>
+                            <a>2</a>
+                            <a>3</a>
+                            ......
+                            <a>&gt;</a>
+                            <a>&gt;|</a>
+                        </div>
+                        <div class="comment-form">
+                            <form>
+                                <h2>全聚德烤鸭总店</h2>
+                                <textarea></textarea>
+                                <b>20-1000个字</b>
+                                <div class="fileField">
+                                    <input type="file" class="hide">
+                                    <a></a>
+                                </div>
+                                <input type="button" value="发表点评">
+                                <p class="clear"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <!-- 攻略 -->
+        <script id="raidersBoxTemplate" type="text/template">
+            <div id="raidersBox" class="raidersBox">
+                <div class="category-btns">
+                    <a class="chi active">吃</a>
+                    <a class="zhu">住</a>
+                    <a class="wan">玩</a>
+                </div>
+                <ul class="head-tools">
+                    <li>
+                        <a>3km内 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>3km内</a>
+                            <a>本区内</a>
+                            <a>本市内</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a>糕点 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>糕点</a>
+                            <a>银行</a>
+                            <a>饭店</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a>默认排序 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>默认排序</a>
+                            <a>按距离</a>
+                            <a>按相关性</a>
+                        </div>
+                    </li>
+                    <p class="clear"></p>
+                </ul>
+                <ul class="resultList" id="reprintsultList">
+                    <li>
+                        <img src="img/yiheyuan.jpg">
+                        <div class="">
+                            <h3>全聚德烤鸭</h3>
+                            <p><b class="star"></b><b class="star"></b><b class="star"></b><b></b><b></b></p>
+                            <span>人均:79元</span>
+                            <p>北京市昌平区和平大道289号</p>
+                            <img src="img/gl5.png" class="rec-icon">
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/yiheyuan.jpg">
+                        <div class="">
+                            <h3>全聚德烤鸭</h3>
+                            <p><b class="star"></b><b class="star"></b><b class="star"></b><b></b><b></b></p>
+                            <span>人均:79元</span>
+                            <p>北京市昌平区和平大道289号</p>
+                            <img src="img/gl5.png" class="rec-icon">
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/yiheyuan.jpg">
+                        <div class="">
+                            <h3>全聚德烤鸭</h3>
+                            <p><b class="star"></b><b class="star"></b><b class="star"></b><b></b><b></b></p>
+                            <span>人均:79元</span>
+                            <p>北京市昌平区和平大道289号</p>
+                            <img src="img/gl5.png" class="rec-icon">
+                        </div>
+                    </li>
+                </ul>
+				
+                <a class="more"></a>
+				
+		
+            </div>
+			
+			
+        </script>
+        
+        <!-- 组团 -->
+        <script type="text/template" id="zoneMainTemplate">
+            <div id="zoneBox" class="zoneBox">
+                <h2>组 团</h2>
+                <ul class="head-tools">
+                    <li>
+                        <a>全部<i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>3km内</a>
+                            <a>本区内</a>
+                            <a>本市内</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a>地理位置 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>糕点</a>
+                            <a>银行</a>
+                            <a>饭店</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a>出行天数 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>默认排序</a>
+                            <a>按距离</a>
+                            <a>按相关性</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a>旅行经费 <i class="fa fa-angle-down"></i></a>
+                        <div class="hide">
+                            <a>默认排序</a>
+                            <a>按距离</a>
+                            <a>按相关性</a>
+                        </div>
+                    </li>
+                    <p class="clear"></p>
+                </ul>
+                <div class="detailsBox"></div>
+                <div class="sc-banner">
+                    <div class="frame">
+                        <div class="box">
+                            <div class="box-1">
+                                <a><img src="img/1.jpg"></a>
+                                <a><img src="img/2.jpg"></a>
+                                <a><img src="img/3.jpg"></a>
+                                <a><img src="img/4.jpg"></a>
+                                <a><img src="img/5.jpg"></a>
+                                <a><img src="img/6.jpg"></a>
+                                <a><img src="img/7.jpg"></a>
+                                <a><img src="img/8.jpg"></a>
+                                <a><img src="img/9.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <a class="prev"></a>
+                        <a class="next"></a>
+                    </div>
+                </div>
+                <div class="travel"><a></a></div>
+				<!--<div id="example" class="ezmodal">
+                
+                            
+                            <div class="tanchu1">
+                    <h1>畅游北京，体验皇家奢华生活</h1>
+                    <p>出发日期：2015／12／20  
+					<span>返回日期：2015／12／24</span>       
+					团费：2000元/人</p>
+					<div class="tan-tools">
+						<a class="ping">评论<br>124</a><a class="shou">收藏<br>92</a><a class="xiang">分享<br>293</a>
+					</div>
+					<a class="submit-btn"></a>
+					<div class="con">
+						<strang>【基本行程】春节期间，畅游北京，具体如下：</strang> <br>
+
+1. 06/02/16~09/02/16：北京。住宿点位于Khaosan Rd，除了伦披尼公园等自然景观外，还有胜利纪念碑等人文建筑，当然不可少的是玉佛寺等一系列的寺庙了。<br>
+
+2.09/02/16~10/02/16，入主芭提雅，除了领略据说还不错的海滩风景外，更应体验这别具一格的泰色之夜哦！<br> 
+
+3.10/02/16~13/02/16感受泰国的“清淡”。离开喧嚣的曼谷，来到泰北的清迈降降温！住宿点Gaps House位于老城区，继续如图二所示，按距离长短划远、中及近三类型景点，当然主要的林穿越“。
+
+					</div>
+			 
+				 <div class="per1">
+				 	<div class="face1">
+                        <img src="img/myworld/grzx7.png">
+                        <div class="widgets1">
+                         
+                            <a></a>
+                        </div>
+                    </div>
+					<h3>星球花园</h3>
+					<h4>Lv.7</h4>
+					
+					<input type="button" value="+关注" class="level">
+					<p>带团经验：2年<br>成功组团：26个<br>好评率：99%</p>
+				 
+				 </div>
+               
+             -->
+                            
+                        </div>
+                    </div>
+            </div>
+        </script>
+        <!-- 组团 之一 -->
+        <script type="text/template" id="zoneSubOneTemplate">
+            <div class="box subOne">
+                <img src="img/gugong.jpeg">
+                <div class="subBox">
+                    <h1>畅游北京，体验皇家奢华生活</h1>
+                    <p>出发日期：2015-12-20</p>
+                    <p>游玩时间：5天</p>
+                    <p>团费：2000元/人</p>
+                    
+				 <button type="button" class="btn btn-lg btn-primary" ezmodal-target="#example1" style=" background:none;border:none;"><a class="submit-btn"></a></button>
+                    <div id="example1" class="ezmodal">
+                
+                            
+                            <div class="tanchu">
+                    <h1>畅游北京，体验皇家奢华生活</h1>
+                    <p>出发日期：2015／12／20  
+					<span>返回日期：2015／12／24</span>       
+					团费：2000元/人</p>
+                    <p>人数：成人<input name="" type="text" value="1" class="tan-input">个  儿童<input name="" type="text" value="0" class="tan-input">个  共1人</p>
+                    <dl>
+                    <dd><label>*联系人姓名:</label></dd>
+                    <dt><input type="text" class="tan-input1"><span class="help"> 请填写真实信息，方便团长与您联系</span></dt>
+                    <dd><label>*手机:</label></dd>
+                    <dt><input type="text"><span class="help"> 请填写真实信息，方便团长与您联系</span></dt>
+                   <dd><label>*邮箱:</label></dd>
+                    <dt><input type="text"><span class="help"> 请填写真实信息，方便团长与您联系</span></dt>
+				 </dl>
+                  <a class="submit-btn1"></a>
+				  <a class="submit-btn2"></a>
+				  <p>已有15人报名</p>
+				 <ul>
+				 <li><img src="img/myworld/p1.png"/></br>朵朵</li>
+				 <li><img src="img/myworld/p1.png"/></br>少少</li>
+				 <li><img src="img/myworld/p1.png"/></br>朵朵</li>
+				 <li><img src="img/myworld/p1.png"/></br>少少</li>
+				 <li><img src="img/myworld/p1.png"/></br>朵朵</li>
+				 <li><img src="img/myworld/p1.png"/></br>少少</li>
+				 <li><img src="img/myworld/p1.png"/></br>朵朵</li>
+				 <li><img src="img/myworld/p1.png"/></br>少少</li>
+				 <li><img src="img/myworld/p1.png"/></br>朵朵</li>
+				 <li><img src="img/myworld/p1.png"/></br>少少</li>
+				 
+				 </ul>
+				 <div class="per">
+				 	<div class="face">
+                        <img src="img/myworld/grzx7.png">
+                        <div class="widgets">
+                         
+                            <a></a>
+                        </div>
+                    </div>
+					<h3>星球花园</h3>
+					<h4>Lv.7</h4>
+					
+					<input type="button" value="+关注" class="level">
+					<p>带团经验：2年<br>成功组团：26个<br>好评率：99%</p>
+				 
+				 </div>
+               
+             
+                            
+                        </div>
+                    </div>
+                    
+  
+        <script src="src/jquery-1.11.3.min.js"></script>
+        
+        <!-- 组团 之二 -->
+         <script type="text/template" id="tuanDetailTemplate">
+		 	            
+			<div class="zutuanbox">
+						<div class="zutuan">
+                    
+                  
+                    <dl>
+                    <dd><label>*团游名称:</label></dd>
+                    <dt><input type="text"><span class="help">不超过20字</span></dt>
+                    <dd><label>*联系方式:</label></dd>
+                    <dt><input type="text"></dt>
+					<dd><label>*目 的 地&nbsp;:</label></dd>
+                    <dt><select>
+                            <option>请选择</option>
+                            <option>北京市</option>
+                        </select>
+						<select>
+                            <option>请选择</option>
+                            <option>北京市</option>
+                        </select>
+						<select>
+                            <option>请选择</option>
+                            <option>北京市</option>
+                        </select>
+					</dt>
+					<dd><label>*出发日期:</label></dd>
+                    <dt><input type="text" class="text1"></dt>
+			
+                    <dd><label>*行程简介:</label></dd>
+                    <dt><textarea></textarea></dt>
+				 </dl>
+				 <div class="clear"></div>
+                 <div class="fileField">
+                                    <input class="hide" type="file">
+                                    <a></a>
+                                </div>
+				 <di>
+				 	 <dd><label>*团 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费:</label></dd>
+                    <dt><input type="text" class="text2"><span class="help">元/人</span></dt>
+					<dd><label>*人数上限:</label></dd>
+                    <dt><input type="text" class="text3"><span class="help">人</span></dt>
+				 </di>
+				 
+				 <div class="per">
+				 	<div class="face">
+                        <img src="img/myworld/grzx7.png">
+                        <div class="widgets">
+                         
+                            <a></a>
+                        </div>
+                    </div>
+					<h3>星球花园</h3>
+					<h4>Lv.7</h4>
+					
+					<input type="button" value="+关注" class="level">
+					<p>带团经验：2年<br>成功组团：26个<br>好评率：99%</p>
+				 
+				 </div>
+               
+             
+                            
+                        </div></div>
+		 </script>
+        
+        <script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="src/ezmodal.js"></script>
+        <script type="text/javascript">            
+            $('#example5').ezmodal({
+                'onShow': function () {
+                    alert('open');
+                }
+            });
+            
+            $('#example6').ezmodal({
+                'onClose': function () {
+                    alert('open');
+                }
+            });
+        </script>
+                    <b>已有32人报名参团</b>
+                </div>
+            </div>
+        </script>
+         <!-- 组团 之二 -->
+        <!--<script type="text/template" id="zoneSubOneTemplate1">
+            <div class="box1 subOne1">
+                <img src="img/gugong.jpeg">
+                <div class="subBox1">
+                    <h1>畅游北京，体验皇家奢华生活</h1>
+                    <p>出发日期：2015／12／20        返回日期：2015／12／24         团费：2000元/人</p>
+                    <p>人数：成人<input name="" type="text" value="1">个  儿童<input name="" type="text" value="1">个  共1人</p>
+                    <dl>
+                    <dd><label>*联系人姓名</label></dd>
+                    <dt><input type="text"><span class="help"> 请填写真实信息，方便团长与您联系</span></dt>
+                    <dd><label>*手机</label></dd>
+                    <dt><input type="text"><span class="help"> 请填写真实信息，方便团长与您联系</span></dt>
+                   <dd><label>*邮箱</label></dd>
+                    <dt><input type="text"><span class="help"> 请填写真实信息，方便团长与您联系</span></dt>
+				 </dl>
+                  <a class="submit-btn1"></a>
+				  <a class="submit-btn2"></a>
+				  <p>已有15人报名</p>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+				  <img src="img/myworld/p1.png"/>
+               
+                </div>
+            </div>
+        </script>-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/citymap.js"></script>
+    </body>
+</html>

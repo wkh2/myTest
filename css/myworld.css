@@ -1,0 +1,404 @@
+@import url(font-awesome.css);
+
+*{
+    margin: 0; padding:0; box-sizing: border-box;
+}
+a{
+    display: inline-block; text-decoration: none; cursor: pointer;
+}
+img{
+    border:none;
+}
+span{
+    display: inline-block;
+}
+li{
+    list-style: none;
+}
+.clear{
+    clear: both;
+}
+.hide{
+    display: none;
+}
+.vague{
+    -webkit-filter: blur(5px);  -moz-filter: blur(5px);  -ms-filter: blur(5px);  filter: blur(5px);
+}
+body{
+    font-size: 14px; font-family: 'Microsoft YaHei'; color:rgb(68,68,68);  min-width: 1320px;
+}
+
+.mainContainer{
+    width:100%; height:100%; padding:0 10px; overflow: hidden;  min-width: 1350px; position:absolute; top:0; left:0; right:0;bottom:0;
+}
+.mainContainer .vague{
+    width:100%; height:100%; position:absolute; top:0; left:0; right:0;bottom:0;background: url(../img/myworld/nodejs.png) no-repeat 50% 50%; z-index: 0;
+}
+.container{
+    width:100%; height:100%; min-width: 1350px; position: relative;
+}
+.container .sidebar{
+    width:265px; float:left; margin-right:50px;
+}
+.container .content{
+    width:1019px; float:left; height:662px; margin-top:80px; background: url(../img/myworld/x5.png) no-repeat 50% 50%;
+}
+.container .sidebar .backhome{
+    width:86px; height:80px; background: url(../img/myworld/gezx3.png) no-repeat 50% 0; background-size: 100% 64px; padding-top:64px; color:#ccc; text-align:center; position: relative; top:10px;
+}
+.container .sidebar .backhome:hover{
+    color:rgb(255,118,63);
+}
+.container .sidebar .face{
+    width:213px; height:213px; margin:auto; background: url(../img/myworld/x3.png) no-repeat 50% 50%; padding:30px; position: relative;
+}
+.container .sidebar .face img{
+    width:100%; height:100%; border-radius:100px;
+}
+.container .sidebar .face .widgets{
+    position: absolute; bottom:-1px; left:-14px;
+}
+.container .sidebar .face .widgets a{
+    background: url(../img/myworld/x1.png) no-repeat; width:47px; height:43px; border-radius:24px; position: relative;
+}
+.container .sidebar .face .widgets a:nth-child(1){
+    background-position: 0px 0px; top:-50px; left:30px;
+}
+.container .sidebar .face .widgets a:nth-child(2){
+    background-position: 0px -43px; top:-14px; left:8px;
+}
+.container .sidebar .face .widgets a:nth-child(3){
+    background-position: 0px -86px; top:28px;
+}
+.container .sidebar .face .widgets a span{
+    width:15px; height:15px; line-height: 15px; background: #f00; border-radius:7px; color:#fff; text-align: center; font-size: 12px; position: relative; top:5px;
+}
+.container .sidebar .menu{
+    width:100%; height:527px; background: url(../img/myworld/x2.png) no-repeat 50% 0; padding:60px 20px; text-align: center;
+}
+.container .sidebar .title{
+    text-align: center; color:#eee; margin-top:3px; margin-bottom:3px; font-size:15px;
+}
+.container .sidebar .level{
+    text-align: center; background: rgb(249,188,1); width:46px; line-height: 1.4em; margin:auto; border-radius:12px;
+}
+.container .sidebar .menu li{
+    width:100%; line-height: 59px; background: url(../img/myworld/x4.png) no-repeat 50% bottom; font-size:20px;
+}
+.container .sidebar .menu li a{
+    color:rgb(118,100,83);
+}
+.container .sidebar .menu li.active a,.container .sidebar .menu li a:hover{
+    color:rgb(249,188,1);
+}
+
+.container .content .taskbox>h3{
+    text-align: center; line-height: 34px; padding-left:64px; color:rgb(249,188,1);
+}
+.container .content .taskbox{
+    padding-left:60px; padding-right:70px;
+}
+.container .content .taskbox dl{
+    width:50%; padding-top:50px; float: left;
+}
+.container .content .taskbox dt,.container .content .taskbox dd{
+    height:50px; margin-bottom:50px;
+}
+.container .content .taskbox dt{
+    float:left; clear:both;
+}
+.container .content .taskbox dd{
+    float:right; text-align: center; width:70px;
+}
+.container .content .taskbox dt div{
+    padding-left:70px; background: url(../img/myworld/x10.png) no-repeat;
+}
+.container .content .taskbox dt:nth-of-type(1) div{
+    background-position: 0px 0px;
+}
+.container .content .taskbox dt:nth-of-type(2) div{
+    background-position: 0px -39px;
+}
+.container .content .taskbox dt:nth-of-type(3) div{
+    background-position: 0px -81px;
+}
+.container .content .taskbox dt:nth-of-type(4) div{
+    background-position: 0px -124px;
+}
+.container .content .taskbox dt:nth-of-type(5) div{
+    background-position: 0px -168px;
+}
+.container .content .taskbox dt div h2{
+    color:rgb(249,188,1); font-size:20px;
+}
+.container .content .taskbox dt div p{
+    color:rgb(207,169,114);
+}
+.container .content .taskbox dd span{
+    color:#fff;
+}
+.container .content .taskbox dd a{
+    color:#000; width:70px; line-height: 30px; background: rgb(209,192,165); border-radius:20px;
+}
+
+.container .content .taskbox .details{
+    background: url(../img/myworld/x12.png) no-repeat; width:331px; height:491px; float: right; margin-top:40px; padding:12px 40px; position: relative;
+}
+.container .content .taskbox .details>h2{
+    font-size:15px;  margin-bottom:12px; width:223px; margin:auto;
+}
+.container .content .taskbox .details .total{
+    background: url(../img/myworld/X13.png) no-repeat 50% 50%; width:223px; height:84px; margin:auto; margin-bottom:10px; text-align: center; padding-top:15px;
+}
+.container .content .taskbox .details .total span{
+    display: block; position: relative; width:60px; margin:auto; color:#f00; font-size:32px; text-shadow: #000 0 0 2px;
+}
+.container .content .taskbox .details .total span b{
+    position: absolute; top:-5px; font-size:14px;
+}
+.container .content .taskbox .details .total a{
+    text-decoration: underline;
+}
+.container .content .taskbox .details .total a:hover{
+    color:#c00;
+}
+.container .content .taskbox .consume{
+    background: url(../img/myworld/X14.png) no-repeat 50% 50%; width:223px; height:252px; margin:auto; padding:0 12px;
+}
+.container .content .taskbox .consume li{
+    line-height: 50px;
+}
+.container .content .taskbox .consume li span{
+    float:right;
+}
+.container .content .taskbox .details .acer{
+    position: absolute; bottom:-80px; right:-95px;
+}
+
+.container .content .collectbox{
+    position: relative;
+}
+
+.container .content .collectbox>h3{
+    text-align: center; line-height: 34px; padding-left:64px; color:rgb(249,188,1);
+}
+.container .content .collectbox .tools{
+    text-align: center; margin:12px 0;
+}
+.container .content .collectbox .tools .group>ul{
+    display: inline-block;
+}
+.container .content .collectbox .tools .group>ul>li{
+    position: relative;
+}
+.container .content .collectbox .tools .group>ul i{
+    font-size:20px;
+}
+.container .content .collectbox .tools .group>ul li ul{
+    position: absolute; top:40px; left:0; z-index: 10;
+}
+.container .content .collectbox .tools .group>ul li ul a{
+    border-radius:0;
+}
+.container .content .collectbox .tools a{
+    background: rgb(209,192,166); width:120px; line-height: 40px; color:#000; border-radius:6px; font-size:15px;
+}
+.container .content .collectbox .tools a.active,.container .content .collectbox .tools a:hover{
+    background: rgb(249,188,1);
+}
+.container .content .collectbox .list{
+    padding:0 20px;
+}
+.container .content .collectbox .list li{
+    width:23%; margin:1%; float: left; height:220px; position: relative;
+}
+.container .content .collectbox .list li img{
+    width:100%; height:100%;
+}
+.container .content .collectbox .list li h3{
+    height:30px; width:100%; background: rgba(0,0,0,.5); line-height: 30px; position: absolute; bottom:0; left:0; color:#C7C2C2; font-size:15px; padding:0 10px;
+}
+.container .content .collectbox .list li h3 span{
+    font-size:12px; float:right;
+}
+.container .content .collectbox .list li .shade{
+    background: rgba(0,0,0,.5); width:100%; height:100%; position: absolute; top:0; left:0; text-align: center; padding-top:50px; display: none; cursor:pointer;
+}
+.container .content .collectbox .list li:hover .shade{
+    display: block;
+}
+.container .content .collectbox .list li:hover h3{
+    display: none;
+}
+.container .content .collectbox .list li .shade h2{
+    color:#DAD8D8; font-size:16px; margin-bottom:8px;
+}
+.container .content .collectbox .list li .shade span b{
+    background: url(../img/myworld/x9.png) no-repeat 0 -37px; width:22px; height:21px; display: inline-block;
+}
+.container .content .collectbox .list li .shade p{
+    color:#B1ACAC; font-size:13px;
+}
+.container .content .collectbox .list li .shade h4{
+    color:#DAD8D8; font-size:14px;
+}
+.container .content .collectbox .category{
+    position: absolute; right:-63px; top:25px;
+}
+.container .content .collectbox .category a{
+    display: block; background: url(../img/myworld/x7.png) no-repeat; width:64px; height:57px; text-align: center; line-height:57px;
+}
+.container .content .collectbox .category a:hover,.container .content .collectbox .category a.active{
+    background-image: url(../img/myworld/x8.png);
+}
+.container .content .collectbox .paging{
+    clear:both; text-align: center; color:rgb(210,193,167);
+}
+.container .content .collectbox .paging a{
+    width:24px; height:24px; border-radius:4px; background: rgb(210,193,167); line-height: 24px; margin:0 2px; color:#000;
+}
+.container .content .collectbox .paging a:hover,.container .content .collectbox .paging a.active{
+    background: rgb(249,188,1);
+}
+
+.container .content .groupbox{
+    position: relative;
+}
+
+.container .content .groupbox>h3{
+    text-align: center; line-height: 34px; padding-left:64px; color:rgb(249,188,1);
+}
+.container .content .groupbox .tools{
+    text-align: center; margin:12px 0;
+}
+.container .content .groupbox .tools .group>ul{
+    display: inline-block;
+}
+.container .content .groupbox .tools .group>ul>li{
+    position: relative;
+}
+.container .content .groupbox .tools .group>ul i{
+    font-size:20px;
+}
+.container .content .groupbox .tools .group>ul li ul{
+    position: absolute; top:40px; left:0; z-index: 10;
+}
+.container .content .groupbox .tools .group>ul li ul a{
+    border-radius:0;
+}
+.container .content .groupbox .tools a{
+    background: rgb(209,192,166); width:120px; line-height: 40px; color:#000; border-radius:6px; font-size:15px;
+}
+.container .content .groupbox .tools a.active,.container .content .groupbox .tools a:hover{
+    background: rgb(249,188,1);
+}
+.container .content .groupbox .list{
+    padding:0 20px;
+}
+.container .content .groupbox .list li{
+    width:100%; padding:1%;  height:198px; position: relative; border:2px solid #f9bc01; margin-top:20px;
+}
+.container .content .groupbox .list li .gimg{ width:35%; float:left; height:99%;}
+.container .content .groupbox .list li .gimg img{
+    width:100%; height:100%;
+}
+
+.container .content .groupbox .list li .gtext{
+     width:38%; height:99%; float:left; color:#d1c0a5; margin-left:3%; line-height:24px; 
+}
+.container .content .groupbox .list li .gtext h3{ font-size:18px; color:#f9bc01; }
+.container .content .groupbox .list li .gtext span b{
+    background: url(../img/myworld/x9.png) no-repeat 0 -37px; width:22px; height:21px; display: inline-block; padding:10px;
+}
+.container .content .groupbox .list li .gtext .y{color:#f9bc01;}
+.container .content .groupbox .list li .gtext p a{ color:#f9bc01;}
+.container .content .groupbox .list li .pro{ width:25px; float:left; text-align:center; margin-left:3%; padding:30px;;}
+.container .content .groupbox .list li p img{ padding:5px;}
+.container .content .groupbox .list li .gtext .t ol li{ float:left; border:none; width:50px; padding:0; text-align:center; margin:0px; line-height:16px;}
+#box .hid{display:none;}
+#box .show{display:block;}
+.container .content .groupbox .category{
+    position: absolute; right:-93px; top:25px;
+}
+.container .content .groupbox .category a{
+    display: block; background: url(../img/myworld/libg.png) no-repeat; width:98px; height:57px; text-align: center; line-height:57px;
+}
+.container .content .groupbox .category a:hover,.container .content .groupbox .category a.active{
+    background-image: url(../img/myworld/libgh.png);
+}
+.container .content .groupbox .paging{
+    clear:both; text-align: center; color:rgb(210,193,167); margin-top:20px;
+}
+.container .content .groupbox .paging a{
+    width:24px; height:24px; border-radius:4px; background: rgb(210,193,167); line-height: 24px; margin:0 2px; color:#000;
+}
+.container .content .groupbox .paging a:hover,.container .content .groupbox .paging a.active{
+    background: rgb(249,188,1);
+}
+
+.container .content .collectbox .date{ width:100%; padding:3%; color:#f9bc01; }
+.container .content .collectbox .date span{ display:block; float:right; width:75%; border-bottom:#f9bc01 1px solid; margin-top:-5px;}
+
+.container .content .accountbox{
+    position: relative;
+}
+
+.container .content .accountbox>h3{
+    text-align: center; line-height: 34px; padding-left:64px; color:rgb(249,188,1);
+}
+
+
+.container .content .accountbox .category{
+    position: absolute; right:-93px; top:25px;
+}
+.container .content .accountbox .category a{
+    display: block; background: url(../img/myworld/libg.png) no-repeat; width:98px; height:57px; text-align: center; line-height:57px;
+}
+
+.container .content .accountbox .category a:hover,.container .content .accountbox .category a.active{
+    background-image: url(../img/myworld/libgh.png);
+}
+.container .content .accountbox .paging{
+    clear:both; text-align: center; color:rgb(210,193,167);
+}
+.container .content .accountbox .paging a{
+    width:24px; height:24px; border-radius:4px; background: rgb(210,193,167); line-height: 24px; margin:0 2px; color:#000;
+}
+.container .content .accountbox .paging a:hover,.container .content .accountbox .paging a.active{
+    background: rgb(249,188,1);
+}
+
+.container .content .accountbox .tools .group .proline{ width:80%; text-align:center; margin:20px auto; color:#f9bc01; line-height:30px;}
+.container .content .accountbox .tools .group .proline img{ width:100%;}
+
+
+.group dl{ width:80%; margin:20px auto;}
+
+.group dd,.group dt{
+    height:32px; line-height: 32px; float: left; margin-bottom:12px; margin-top:12px;
+}
+.group dt{
+    width:18%; text-align: right; clear: both; color:rgb(209,192,166); 
+}
+.group dd{
+    width:66%; padding:0 20px; position: relative;
+}
+
+.group dd .sex{ color:rgb(209,192,166); line-height:50px; width:50px;vertical-align:text-bottom; margin-bottom:2px; margin-bottom:-2px\9;}
+.group .tou{position:absolute; right:25%; top:150px; color:rgb(209,192,166); text-align:center; line-height:30px;}
+.group .tou a{ color:#f9bc01;}
+.group dd input,.group dd select{
+   
+    height:100%; border:none; outline:none; background: rgb(209,192,166); border-radius:6px; padding-left:12px; color:rgb(54,46,43); font-size:16px;
+}
+.group dd b{
+    position: absolute; top:0; right:30px; display: inline-block; line-height: 32px; font-size:16px; font-weight: normal;
+}
+.group dd .btn-plan{
+    width:114px; height:40px; background: url(../img/lxgh3.png); background-size: 100% 100%; float: right;
+}
+.group dd .btn-plan:hover{
+    opacity:.8;
+}
+.group dd textarea{ height:150px; width:100%;resize:none; border:none; outline:none; background: rgb(209,192,166); border-radius:6px; padding-left:12px; color:rgb(54,46,43); font-size:16px;}
+.group dd .num-save{ width:110px; height:30px; border-radius:6px; background:#f9bc01; color:#000; font-family:"微软雅黑"; font-size:16px; text-align:center; margin-top:120px; padding-left:0px;}

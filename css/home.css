@@ -1,0 +1,313 @@
+/************************** 全局 ************************* */
+@import url(font-awesome.css);
+
+*{
+    margin: 0; padding:0; box-sizing: border-box;
+}
+a{
+    display: inline-block; text-decoration: none; cursor: pointer;
+}
+span{
+    display: inline-block;
+}
+li{
+    list-style: none;
+}
+.clear{
+    clear: both;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.vague{
+    -webkit-filter: blur(8px);  -moz-filter: blur(8px);  -ms-filter: blur(8px);  filter: blur(8px);
+}
+body{
+    font-size: 14px; font-family: 'Microsoft YaHei'; color:rgb(68,68,68); background-image: url(../img/home/background.jpg); min-width: 1220px;
+}
+.container{
+    width: 1220px; margin: auto;
+}
+/**************************  顶部主导航 ************************* */
+.header{
+    width: 100%; height: 126px; padding: 0 50px 0 90px; background: url(../img/home/sy-kuang.png) 50% 0; color: rgb(255,218,163); position: relative;
+}
+.header .weather{
+    width:45%; float: left;
+}
+.header .weather .city{
+    line-height: 40px; float: left; margin-top:43px; background: rgb(54,46,43); cursor: pointer;
+}
+.header .weather .curCity{
+    padding: 0 10px; font-size: 24px;
+}
+.header .weather .cityList li{
+    padding: 0 10px; font-size: 16px;
+}
+.header .weather .cityList li:hover{
+    background: #000; 
+}
+.header .weather table{
+    float: left; margin-left: 5px;
+}
+.header .weather table td{
+    height: 126px; padding:0 10px; text-align: center;
+}
+#mainNav{
+    width:50%; float: right; line-height: 126px;
+}
+#mainNav li{
+    float: right; padding: 0 30px; background: url(../img/home/shutiao.png) no-repeat 0 50%;
+}
+#mainNav li:last-child{
+    background: none;
+}
+#mainNav a{
+    color:rgb(255,218,163); font-size: 16px; height:20px;
+}
+#mainNav a:hover{
+    color:rgb(255,118,63);
+}
+.header .shade{
+    height:100%; width:100%; position: absolute; top:0; left:0;
+}
+
+/**************************  首页文档主体 ************************* */
+.logo{
+    background: url(../img/home/logo.png); width: 700px; height:240px; margin: auto; margin-top:30px;
+}
+.searchBox{
+    width:444px; height:52px; position: relative; margin: auto; margin-top:10px;
+}
+.searchBox [type=text]{
+    width:100%; height:100%; font-size: 24px; padding-left: 20px; outline: none; border:1px solid rgb(124,116,113); transition: box-shadow .2s;
+}
+.searchBox [type=text]:focus{
+    border:1px solid rgb(54,46,43); box-shadow: rgb(84,76,73) 0 0 5px; transition: box-shadow .2s;
+}
+.searchBox .btn-search{
+    font-size: 32px; color:rgb(54,46,43); position: absolute; right: 20px; top: 0; height: 100%; line-height: 48px;
+}
+.map{
+    width: 1136px; height: 554px; margin: auto; position: relative; overflow: hidden;
+}
+.map .mainMap{
+    width:100%; height:100%; display: block;
+}
+.map .clouds,.map canvas{
+    position: absolute; width:100%; height:100%; top:0; left: 0; display: block;
+}
+.map .clouds img{
+    position: absolute;
+}
+.map .clouds img:nth-child(1){
+    top:0px; left:0px;
+}
+.map .clouds img:nth-child(2){
+    top:0px; left:200px;
+}
+.map .clouds img:nth-child(3){
+    top:0px; left:400px;
+}
+.map .clouds img:nth-child(4){
+    top:0px; left:600px;
+}
+/**************************  登陆模态框 ************************* */
+#myModal{
+    position: absolute; z-index: 10;top:260px !important;
+}
+.loginModal{
+    width:420px; height:500px; background:url(../img/home/kuang.png) no-repeat 0 0; padding:4px;
+}
+#myModal .close{
+    position: absolute; top:-11px; right:-11px; background: url(../img/home/close.png) no-repeat 50% 50%; width:42px; height:42px;
+}
+.loginModal .loginBox{
+    background: rgb(54,46,43); width:100%; height:100%; padding:40px; border-radius:4px;
+}
+.loginModal .face{
+    width:120px; height:120px; margin:auto; margin-bottom: 40px;
+}
+.loginModal .face img{
+    width:100%; height:100%;
+}
+.loginModal .form-group{
+    border:rgb(40,32,30) solid 1px; padding:0 10px;background: rgb(40,32,30); box-shadow: rgba(155,147,145,.4) -1px -1px 1px inset,#000 1px 1px 4px inset ; border-radius:4px;
+}
+.loginModal .form-group>div{
+    width:100%; height:50px; position: relative;
+}
+.loginModal .form-group input{
+    width:100%; height:100%; background: none;  border:none; outline:none; color:rgb(249,188,2); padding-left:40px;
+}
+.loginModal .form-group .icon{
+    position: absolute; height:100%; line-height: 50px; top:0; left:8px; color:rgb(255,218,163); font-size: 16px;
+}
+.loginModal .form-group .form-hr{
+    border-color:rgb(11,11,11); box-shadow:#333 0 1px 1px;
+}
+.loginModal .form-checkbox{
+    color:rgb(176,143,100); font-size:12px; margin-top:12px;
+}
+.loginModal .form-checkbox .forget{
+    float:right; color:rgb(176,143,100); text-decoration: underline;
+}
+.loginModal .form-checkbox .forget:hover,.loginModal .form-btn p .goLegister:hover{
+    color:rgb(255,118,63);
+}
+.loginModal .form-checkbox .checkbox i{
+    font-size:16px; position: relative; top:1px;
+}
+.loginModal .form-btn{
+    width:150px; height:50px; margin:auto; margin-top:40px;
+}
+.loginModal .form-btn .goLogin{
+    width:100%; height:100%; background: url(../img/home/login.png) no-repeat 50% 50%; border:none; outline:none; border-radius: 12px;
+}
+.loginModal .form-btn .goLogin:hover{
+    opacity: .8;
+}
+.loginModal .form-btn p{
+    margin-top:8px; color:rgb(255,218,163);
+}
+.loginModal .form-btn p .goLegister{
+    color:rgb(249,188,2); text-decoration: underline;
+}
+.loginModal .help{
+    position: absolute;right:0; top:0; height:100%; line-height: 50px; color:#f00;
+}
+/**************************  注册模态框 ************************* */
+.registerModal{
+    width:918px; height:574px; background:url(../img/home/kuang2.png) no-repeat 0 0; padding:4px 8px 8px 4px;
+}
+.registerModal .registerBox{
+    background: rgb(54,46,43); width:100%; height:100%; padding:32px 0 0 40px; border-radius:4px;
+}
+.registerModal .progress{
+    width:100%; height:44px; line-height: 44px; position: relative;
+}
+.registerModal .progress .progressBar{
+    width:100%; height:10px; position: absolute; top:17px; background: #000; border-radius:4px;
+}
+.registerModal .progress .progressBar span{
+    width:23%; height:100%; background: rgb(248,227,105); position:absolute; top:0; left:0; border-radius:4px;
+}
+.registerModal .progress .circle{
+    position: relative; font-size: 16px;
+}
+.registerModal .progress .circle span{
+    background: url(../img/home/shuzi.png) no-repeat right 50%; width:25%; padding-left:19.7%; height:100%; text-align: center; float: left; font-weight: bold;
+}
+.registerModal .formTitle{
+    font-size:24px; background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(250,204,2, 1)),to(rgba(177,120,15, 1))); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom:24px; margin-top: 16px;
+}
+/**************************  注册模态框 第一步 ************************* */
+.registerModal #registerForm dd,.registerModal #registerForm dt{
+    float:left; line-height: 40px; height: 40px; margin-bottom:16px;
+}
+.registerModal #registerForm dd{
+    clear:both; width:115px; font-size: 16px; margin-right:15px; text-align: right; color:rgb(206,169,114);
+}
+.registerModal #registerForm dt [type=text],.registerModal #registerForm dt [type=password]{
+    height:100%; width:280px; background:rgb(40,32,30); box-shadow: rgba(155,147,145,.4) -1px -1px 1px inset, #151313 2px 2px 3px inset; outline: none; border:none; color:rgb(249,188,2); padding-left:10px; margin-right:8px;
+}
+.registerModal #registerForm dt .strength{
+    height:100%;
+}
+.registerModal #registerForm dt .strength b{
+    display: inline-block; width:54px; height:100%; background: rgb(90,73,63); text-align: center; color:rgb(41,31,29); font-size:16px; margin-right:2px;
+}
+.registerModal #registerForm dt .strength b.active{
+    background: rgb(208,169,114);
+}
+.registerModal #registerForm dt .help{
+     color:#f00;
+}
+.registerModal #registerForm dt .checkbox{
+    color:rgb(206,169,114); margin-right:8px;
+}
+.registerModal #registerForm dt .checkbox i:before{
+    font-size: 18px; position: relative; top:2px;
+}
+.registerModal #registerForm dt .checkbox a{
+    color:rgb(206,169,114); text-decoration: underline; height:20px; line-height: 20px;
+}
+.registerModal #registerForm dt .checkbox a:hover{
+    color: rgb(255,118,63);
+}
+.registerModal #registerForm dt .goNext{
+    width:216px; background: rgb(249,188,1); height:54px; border:none; outline: none; transition: background-color .2s; border-radius: 6px; display: inline-block;cursor: pointer; box-shadow: inset 0 -4px 0 rgb(171,114,7);
+    font-size: 16px; color:rgb(54,46,43); font-weight: bold;
+}
+.registerModal #registerForm dt .goNext:hover{
+    background-color: rgb(171,114,7);
+}
+/**************************  注册模态框 第二步 ************************* */
+.registerModal #phoneValid{
+    padding:0 50px;
+}
+.registerModal #phoneValid div.left{
+    float: left;
+}
+.registerModal #phoneValid div.left p{
+    font-size: 20px; color:#DAAB24; margin-top:14px; margin-bottom:40px;
+}
+.registerModal #phoneValid div.left .validcodeBox{
+    width:214px; height:40px; margin-bottom:94px;
+}
+.registerModal #phoneValid div.left .vercode{
+    width:100%; height:100%; padding-left:8px; background: rgb(40,32,30); border:none; outline: none; box-shadow: rgba(155,147,145,.4) -1px -1px 1px inset, #151313 2px 2px 3px inset; display: block; font-size: 20px; color:#DAAB24;
+}
+.registerModal #phoneValid div.left .validcodeBox .help{
+    color:#f00; margin-top:5px;
+}
+.registerModal #phoneValid div.left .btn-finish{
+    width:216px; background: rgb(249,188,1); height:54px; border:none; outline: none; transition: background-color .2s; border-radius: 6px; display: inline-block;cursor: pointer; box-shadow: inset 0 -4px 0 rgb(171,114,7);
+    font-size: 20px; color:rgb(56,47,42); font-weight: bold; display: block; margin-bottom:12px;
+}
+.registerModal #phoneValid div.left .btn-finish:hover{
+    background-color: rgb(171,114,7);
+}
+.registerModal #phoneValid div.left .problem{
+    color:rgb(206,169,114); text-decoration: underline;
+}
+.registerModal #phoneValid div.left .problem:hover,
+.registerModal #phoneValid div.right .reGet:hover,
+.registerModal #phoneValid div.right .rePhone:hover,
+.registerModal #registerFinish .box a:hover{
+    color: rgb(255,118,63);
+}
+.registerModal #phoneValid div.right{
+    float: right; width:260px; height:170px; box-shadow: rgba(155,147,145,.4) -1px -1px 1px inset, #151313 2px 2px 3px inset; background: rgb(40,32,30); padding-top: 18px; padding-left:24px; border-radius:6px;
+}
+.registerModal #phoneValid div.right p{
+    color: rgb(128,106,92); font-size: 16px; margin-bottom:15px;
+}
+.registerModal #phoneValid div.right .reGet{
+    color: #DAAB24; margin-bottom:15px; text-decoration: underline;
+}
+.registerModal #phoneValid div.right .rePhone{
+    color: #DAAB24; font-size: 16px;
+}
+/**************************  注册模态框 完成注册 ************************* */
+.registerModal #registerFinish{
+    padding:0 104px;
+}
+.registerModal #registerFinish p.prompt{
+    font-size:28px; font-weight:bold; height:64px; line-height: 64px; color:rgb(242,214,77); background: url(../img/home/finish.png) no-repeat 0 50%; padding-left:80px; margin-bottom:60px;
+}
+.registerModal #registerFinish .box{
+    width:540px; height:175px; box-shadow: rgba(155,147,145,.4) -1px -1px 1px inset, #151313 2px 2px 3px inset; background: rgb(40,32,30); padding-top: 18px; padding-left:24px; margin:auto; border-radius:6px;
+}
+.registerModal #registerFinish p{
+    color: rgb(128,106,92); font-size: 20px; margin-bottom:40px;
+}
+.registerModal #registerFinish .box a{
+    color: rgb(247,188,0); font-size: 20px;
+}
+.registerModal #registerFinish .box a.goHome{
+    margin-left:40px; margin-right:120px;
+}
